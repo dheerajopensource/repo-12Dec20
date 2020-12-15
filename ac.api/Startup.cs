@@ -29,6 +29,15 @@ namespace ac.api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCors", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -67,7 +76,7 @@ namespace ac.api
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors("EnableCors");
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
