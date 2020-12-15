@@ -18,3 +18,5 @@ Project(s)
 ac.api/ac.api.csproj
 ac.test/ac.test.csproj
 ```
+### trust cert for the first time
+dotnet dev-certs https --trust
