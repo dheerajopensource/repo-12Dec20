@@ -1,0 +1,15 @@
+{
+  "name": "ac.nodejs",
+  "version": "1.0.0",
+  "description": "node backend",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dheeraj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
+  }
+}
