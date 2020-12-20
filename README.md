@@ -1,5 +1,5 @@
 # repo-12Dec20
-.net 5 angular project
+.net 5 angular project -- update the backend with nodeJs
 
 # create solution
 **> dotnet new sln --name ac-repo**
