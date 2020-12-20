@@ -1,5 +1,5 @@
 # repo-12Dec20
-.net 5 angular project
+.net 5 angular project -- update the backend with nodeJs
 
 # create solution
 **> dotnet new sln --name ac-repo**
@@ -20,10 +20,3 @@ ac.test/ac.test.csproj
 ```
 ### trust cert for the first time
 dotnet dev-certs https --trust
-
-## Node Js
-```
- 1-expressjs
-    > npm install --save express
-
-```
