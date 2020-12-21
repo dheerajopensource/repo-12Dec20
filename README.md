@@ -1,6 +1,11 @@
 # repo-12Dec20
 .net 5 angular project -- update the backend with nodeJs
 
+## Backend - .Net Core port-5000/1 
+## Backend -  node js port 9999
+
+## frontend - angular
+
 # create solution
 **> dotnet new sln --name ac-repo**
 
