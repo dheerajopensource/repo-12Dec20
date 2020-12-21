@@ -1,5 +1,5 @@
 # repo-12Dec20
-.net 5 angular project -- update the backend with nodeJs
+.net 5 angular project -- update the backend with nodeJs & expressjs
 
 ## Backend - .Net Core port-5000/1 
 ## Backend -  node js port 9999
@@ -25,3 +25,12 @@ ac.test/ac.test.csproj
 ```
 ### trust cert for the first time
 dotnet dev-certs https --trust
+
+# run the code
+```
+Terminal:
+1- run ng app
+      ac.ngweb/my-app$ npm start
+2-run node:
+      node-rest$ node main.js
+```
