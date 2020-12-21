@@ -1,5 +1,6 @@
 const express = require('express');
 const send = require('send');
+const jwt = require('jsonwebtoken');
 const router = express.Router();
 const uuid = require('uuid');
 
@@ -8,8 +9,14 @@ let users = require('../../fake-data/users.json');
 //api starts!
 
 //1. get all user
-router.get("/", (req, res) => {
-    res.json(users);
+router.get("/", verifyToken, (req, res) => {
+    jwt.verify(req.token, "mysecretkey", (err, authData) => {
+        if (err) {
+            res.sendStatus(403);
+        } else {
+            res.json(users);
+        }
+    })
 });
 
 //2. get user by id
@@ -52,28 +59,40 @@ router.put("/:id", (req, res) => {
                 u.first_name = editUser.first_name ? editUser.first_name : u.first_name;
                 u.last_name = editUser.last_name ? editUser.last_name : u.last_name;
                 u.email = editUser.email ? editUser.email : u.email;
-                res.json({message:'user updated', user: u});
+                res.json({ message: 'user updated', user: u });
             }
-        })       
+        })
     }
 });
 
 //5. delete
-router.delete("/:id",(req,res)=>{
-    const user_exists = users.some(u=> u.id === parseInt(req.params.id));
-    
-    if(user_exists){
-        const deletedUser = users.filter(u=> u.id === parseInt(req.params.id));
-        users = users.filter((u)=> u.id !== parseInt(req.params.id));
-        
-        res.json({message: 'user '+ deletedUser[0].first_name +' removed!', remaining_users: users});
+router.delete("/:id", (req, res) => {
+    const user_exists = users.some(u => u.id === parseInt(req.params.id));
+
+    if (user_exists) {
+        const deletedUser = users.filter(u => u.id === parseInt(req.params.id));
+        users = users.filter((u) => u.id !== parseInt(req.params.id));
+
+        res.json({ message: 'user ' + deletedUser[0].first_name + ' removed!', remaining_users: users });
     }
-    else{
+    else {
         res.sendStatus(400);
     }
 });
 
 
 //api ends!
+
+function verifyToken(req, res, next) {
+    const bearerHeader = req.headers['authorization'];
+    if (typeof (bearerHeader) !== 'undefined') {
+        const bearerToken = bearerHeader.split(' ')[1];
+        req.token = bearerToken;
+        next();
+    } else {
+        res.sendStatus(403);
+    }
+
+};
 
 module.exports = router;

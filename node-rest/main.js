@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended :false}));
 
+app.use('/api/account', require('../node-rest/routes/api/account'));
 app.use('/api/users', require('../node-rest/routes/api/users'));
 
 

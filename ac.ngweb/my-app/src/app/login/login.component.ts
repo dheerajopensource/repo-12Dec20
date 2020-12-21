@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   login(form: NgForm) {
     const credentials = JSON.stringify(form.value);
     console.log(credentials);
-    this.http.post("https://localhost:5001/api/account/login", credentials, {
+    this.http.post("https://localhost:9999/api/account/login", credentials, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
