@@ -3,8 +3,15 @@ const send = require('send');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 const uuid = require('uuid');
+const cors = require('cors');
 
 let users = require('../../fake-data/users.json');
+
+//welcome
+router.get('/welcome', cors(), function (req, res, next) {
+    res.json({message: 'you are authenticated'})
+  })
+
 
 //api starts!
 
@@ -14,7 +21,7 @@ router.get("/", verifyToken, (req, res) => {
         if (err) {
             res.sendStatus(403);
         } else {
-            res.json(users);
+            res.json({message:'Welcome to my-app. You are now logged in.',users});
         }
     })
 });

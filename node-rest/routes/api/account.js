@@ -17,8 +17,8 @@ var corsOptions = {
 router.post("/login",cors(corsOptions),(req,res)=>{
    
     const cred = {
-        username: req.body.Username,
-        password: req.body.Password
+        username: req.body.username,
+        password: req.body.password
     };
     if (!cred.username || !cred.password) {
         res.sendStatus(400);

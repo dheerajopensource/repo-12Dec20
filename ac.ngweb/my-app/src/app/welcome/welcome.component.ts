@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get("https://localhost:5001/api/account", {
+    this.http.get("http://localhost:9999/api/users/welcome", {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
