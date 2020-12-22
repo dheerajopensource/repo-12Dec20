@@ -1,5 +1,5 @@
 # repo-12Dec20
-.net 5 angular project -- update the backend with nodeJs & expressjs
+.Net 5 + NodeJs Angular project -- update the backend with nodeJs & expressjs
 ```
 this project has support for both .Net 5 and nodejs
 ```
