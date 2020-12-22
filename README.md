@@ -34,3 +34,34 @@ Terminal:
 2-run node:
       node-rest$ node main.js
 ```
+# Screenshot
+## 1
+![run node backend]( ./assets/1.png "run node backend")
+
+## 2 check api without login token
+![check api without login token]( ./assets/2.png "check api without login token")
+
+## 3 login
+
+![login]( ./assets/3.png "login")
+
+## 4 add token
+![add token]( ./assets/4.png "add token")
+
+
+## 5 add token 2
+![response]( ./assets/5.png "response")
+
+## 6 ng start
+![start ng app]( ./assets/6.png "start ng app")
+
+## 7 home page 
+![home]( ./assets/7.png "home")
+
+## 8 login page
+![login page]( ./assets/8.png "login page")
+
+## 9 landing page
+![landing page]( ./assets/9.png "landing page")
+
+
