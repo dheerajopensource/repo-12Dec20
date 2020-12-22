@@ -4,7 +4,7 @@
 this project has support for both .Net 5 and nodejs
 ```
 # Live Demo
-🔗 ![Node+Angular] https://dheerajopensource.github.io/repo-12Dec20/
+🔗 [Node+Angular] https://dheerajopensource.github.io/repo-12Dec20/
 
 
 ## Backend - .Net Core port-5000/1 
