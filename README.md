@@ -1,5 +1,8 @@
 # repo-12Dec20
 .net 5 angular project -- update the backend with nodeJs & expressjs
+```
+this project has support for both .Net 5 and nodejs
+```
 
 ## Backend - .Net Core port-5000/1 
 ## Backend -  node js port 9999
